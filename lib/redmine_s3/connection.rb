@@ -6,12 +6,12 @@ module RedmineS3
   class Connection
     @@conn = nil
     @@s3_options = {
-      :access_key_id     => nil,
-      :secret_access_key => nil,
-      :bucket            => nil,
-      :folder            => '',
-      :endpoint          => nil,
-      :private           => false,
+      :access_key_id     => ENV['S3_ACCESS_KEY'],
+      :secret_access_key => ENV['S3_SECRET_KEY'],
+      :bucket            => ENV['S3_BUCKET'],
+      :folder            => ENV['S3_FOLDER'] || '',
+      :endpoint          => ENV['S3_END_POINT'] || 's3-ap-northeast-1.amazonaws.com',
+      :private           => ENV['S3_PRIVATE'] || true,
       :expires           => nil,
       :secure            => false,
       :proxy             => false,
