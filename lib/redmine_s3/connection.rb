@@ -13,7 +13,7 @@ module RedmineS3
       :endpoint          => ENV['S3_END_POINT'] || 's3-ap-northeast-1.amazonaws.com',
       :private           => ENV['S3_PRIVATE'] || true,
       :expires           => nil,
-      :secure            => false,
+      :secure            => ENV['S3_SECURE'] || true,
       :proxy             => false,
       :thumb_folder      => 'tmp'
     }
